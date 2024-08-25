@@ -1,0 +1,33 @@
+h1 {
+    text-align: center;
+}
+
+.game-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.game-space {
+    display: flex; 
+    flex-wrap: wrap;
+    gap: 10px; 
+    width: 250px;
+    height: auto;
+}
+
+.game-space .box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70px;
+    height: 70px;
+    background-color: gray;
+    cursor: pointer;
+}
+
+.game-space .box .move-name {
+    font-size: 2.8rem;
+    color: white;
+    font-weight: bolder;
+}
