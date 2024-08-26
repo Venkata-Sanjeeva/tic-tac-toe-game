@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 
 export default function Body() {
   const [gameArray, setGameArray] = useState(Array(9).fill(null));
@@ -20,14 +20,11 @@ export default function Body() {
     for (let i = 0; i < lines.length; i++) {
       const [a, b, c] = lines[i];
       if (gameArray[a] && gameArray[a] === gameArray[b] && gameArray[a] === gameArray[c]) {
-        // console.log("win");
-        // setGameOver(true);
         return [true, gameArray[a]];
       }
     }
 
     if (gameArray.every(box => box !== null)) {
-      console.log("draw");
       return [true, "Draw"];
     }
 
@@ -35,8 +32,6 @@ export default function Body() {
   }
 
   function updateMove(index, move) {
-    // console.log("clicked");
-    // alert("Move Name: " + move + " | Button: " + (index + 1));
 
     if (gameOver || gameArray[index] !== null) {
       return; // If the game is over or the box is already filled, do nothing
@@ -67,9 +62,9 @@ export default function Body() {
     <div className='game-body'>
       <div className="player-moves">
         {checkWinner()[0] && checkWinner()[1] !== "Draw" ? (
-            <p className="player-move-heading">Player {checkWinner()[1]} Won !!!</p>
+            <p className="player-move-heading">Player <span className='move-name'>{checkWinner()[1]}</span> Won !!!</p>
           ) : checkWinner()[0] && checkWinner()[1] === "Draw" ? (
-            <p className="player-move-heading">It's a Draw!</p>
+            <p className="player-move-heading"><span className='move-name'>It's a Draw !</span></p>
           ) : (
             <p className="player-move-heading">
               Player <span className='move-name'>{moveName}</span>'s Move.

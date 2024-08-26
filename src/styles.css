@@ -1,33 +1,73 @@
-h1 {
-    text-align: center;
+/* Header */
+.header {
+  text-align: center;
 }
-
+/* Body of the Game */
 .game-body {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-}
-.game-space {
-    display: flex; 
-    flex-wrap: wrap;
-    gap: 10px; 
-    width: 250px;
-    height: auto;
-}
-
-.game-space .box {
+    justify-content: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  /* Player Move Heading */
+  .player-move-heading {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .move-name {
+    color: #3498db;
+    font-weight: bold;
+  }
+  
+  /* Game Space */
+  .game-space {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .box {
     display: flex;
-    justify-content: center;
     align-items: center;
-    width: 70px;
-    height: 70px;
-    background-color: gray;
+    justify-content: center;
+    background-color: #fff;
+    border: 2px solid #ddd;
+    border-radius: 10px;
     cursor: pointer;
-}
-
-.game-space .box .move-name {
-    font-size: 2.8rem;
-    color: white;
-    font-weight: bolder;
-}
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .box:hover {
+    background-color: #ecf0f1;
+    transform: scale(1.1);
+  }
+  
+  .box p {
+    font-size: 2rem;
+    color: #2c3e50;
+  }
+  
+  /* Reset Button */
+  .reset-btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #e74c3c;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .reset-btn:hover {
+    background-color: #c0392b;
+  }
+  
